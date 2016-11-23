@@ -4,4 +4,4 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -qqy update
 sudo DEBIAN_FRONTEND=noninteractive apt-get -qqy install git python-pip python-dev \
                      python-concurrent.futures python-tornado gcc-arm-linux-gnueabi \
                      libffi-dev libyaml-dev libssl-dev
-sudo pip install ansible markupsafe
+sudo pip install ansible markupsafe simplejson

@@ -30,5 +30,5 @@ echo $TOKEN > $HOME/backend-admin-token.txt
 
 # Create a configuration file for the build script
 echo "[CIP-KernelCI]" > $HOME/.buildpy.cfg
-echo "token=\"$TOKEN\"" >> $HOME/.buildpy.cfg
-echo "url=\"http://localhost:8888\"" >> $HOME/.buildpy.cfg
+echo "token=$TOKEN" >> $HOME/.buildpy.cfg
+echo "url=http://localhost:8888" >> $HOME/.buildpy.cfg

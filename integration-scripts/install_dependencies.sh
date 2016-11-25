@@ -3,5 +3,6 @@
 sudo DEBIAN_FRONTEND=noninteractive apt-get -qqy update
 sudo DEBIAN_FRONTEND=noninteractive apt-get -qqy install git python-pip python-dev \
                      python-concurrent.futures python-tornado gcc-arm-linux-gnueabi \
-                     libffi-dev libyaml-dev libssl-dev
+                     libffi-dev libyaml-dev libssl-dev rng-tools
 sudo pip install ansible markupsafe
+sudo rngd -r /dev/urandom &

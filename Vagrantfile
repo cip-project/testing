@@ -20,7 +20,7 @@ Vagrant.configure(2) do |config|
     vbox.customize ["modifyvm", :id, "--cpus", "2"]
  end
 
- # Forward ports for internal REST server (8888) and frontend webserver (5000)
+ # Forward ports for internal REST server (8888) and frontend webserver (5555)
  config.vm.network :forwarded_port, guest: 8888, host: 8888
  config.vm.network :forwarded_port, guest: 5000, host: 5000
 

@@ -21,3 +21,9 @@ ansible-playbook -i hosts site.yml -l local -c local -K -D \
 
 sudo mkdir -p /var/www/images
 sudo chown -R www-data.www-data /var/www
+
+# Add host to /srv/kernelci-frontend/app/server.py
+sudo sed -ie 's/app.run(thread/app.run(host='\''0.0.0.0'\'', thread/g' /srv/kernelci-frontend/app/server.py
+
+# Start the webserver to run in the background
+/vagrant/scripts/start_webserver.sh &

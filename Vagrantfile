@@ -10,6 +10,9 @@ integration-scripts/install_dependencies.sh
 integration-scripts/install_backend.sh
 integration-scripts/install_frontend.sh
 integration-scripts/install_build_script.sh
+echo
+echo "For demo builds, run the /vagrant/scripts/create_builds.sh file"
+echo
 SCRIPT
 
 Vagrant.configure(2) do |config|

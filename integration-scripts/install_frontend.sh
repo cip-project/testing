@@ -5,7 +5,14 @@
 echo "START: install_frontend.sh"
 
 cd $HOME/git-repos
-git clone https://github.com/kernelci/kernelci-frontend-config.git kernelci-frontend
+
+# Check if repo already exists in the /vagrant directory, if not, download it from github
+GIT_SRC="https://github.com/kernelci/kernelci-frontend-config.git"
+if [ -d /vagrant/kernelci-frontend-config ]; then
+    GIT_SRC=/vagrant/kernelci-frontend-config
+fi
+git clone $GIT_SRC kernelci-frontend
+
 sed -i kernelci-frontend/roles/install-app/tasks/main.yml \
     -e 's/kernelci\/kernelci-frontend.git/siemens\/kernelci-frontend.git/'
 

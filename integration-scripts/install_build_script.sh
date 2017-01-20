@@ -3,7 +3,15 @@
 # SPDX-License-Identifier:	Apache-2.0
 echo "START: install_build_script.sh"
 
-cd $HOME && git clone https://github.com/kernelci/kernelci-build.git
+cd $HOME 
+
+# Check if repo already exists in the /vagrant directory, if not, download it from github
+GIT_SRC="https://github.com/kernelci/kernelci-build.git"
+if [ -d /vagrant/kernelci-build ]; then
+    GIT_SRC=/vagrant/kernelci-build
+fi
+git clone $GIT_SRC
+
 cd kernelci-build
 
 MASTER_KEY=`cat $HOME/backend-admin-token.txt`

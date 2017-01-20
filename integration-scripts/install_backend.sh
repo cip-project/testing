@@ -2,6 +2,7 @@
 # Copyright (C) 2016, Siemens AG, Wolfgang Mauerer <wolfgang.mauerer@siemens.com>
 # SPDX-License-Identifier:	Apache-2.0
 # Install kernelci backend
+echo "START: install_backend.sh"
 
 cd $HOME && mkdir git-repos && cd git-repos
 git clone https://github.com/kernelci/kernelci-backend-config.git kernelci-backend
@@ -41,3 +42,5 @@ echo $TOKEN > $HOME/backend-admin-token.txt
 echo "[CIP-KernelCI]" > $HOME/.buildpy.cfg
 echo "token=$TOKEN" >> $HOME/.buildpy.cfg
 echo "url=http://localhost:8888" >> $HOME/.buildpy.cfg
+
+echo "END: install_backend.sh"

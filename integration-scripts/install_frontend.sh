@@ -2,6 +2,7 @@
 # Copyright (C) 2016, Siemens AG, Wolfgang Mauerer <wolfgang.mauerer@siemens.com>
 # SPDX-License-Identifier:	Apache-2.0
 # Install kernelci frontend
+echo "START: install_frontend.sh"
 
 cd $HOME/git-repos
 git clone https://github.com/kernelci/kernelci-frontend-config.git kernelci-frontend
@@ -27,3 +28,5 @@ sudo sed -ie 's/app.run(thread/app.run(host='\''0.0.0.0'\'', thread/g' /srv/kern
 
 # Start the webserver to run in the background
 /vagrant/scripts/start_webserver.sh &
+
+echo "END: install_frontend.sh"

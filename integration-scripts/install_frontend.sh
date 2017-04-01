@@ -13,9 +13,6 @@ if [ -d /vagrant/kernelci-frontend-config ]; then
 fi
 git clone $GIT_SRC kernelci-frontend
 
-sed -i kernelci-frontend/roles/install-app/tasks/main.yml \
-    -e 's/kernelci\/kernelci-frontend.git/siemens\/kernelci-frontend.git/'
-
 TOKEN=`cat $HOME/backend-admin-token.txt`
 cat /vagrant/config/secrets-frontend.yml | sed -e "s/TOKEN/${TOKEN}/" \
     > kernelci-frontend/secrets.yml
